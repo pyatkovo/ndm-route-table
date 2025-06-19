@@ -1,7 +1,7 @@
 <table>
   <thead>
   <tr>
-    <th (click)="sortBy('address')">
+    <th title="Сортировать по IP" (click)="sortBy('address')">
       Адрес
       @switch(sortState.field === 'address' ? sortState.direction : null) {
       @case('asc') {<span>▲</span>}
@@ -9,14 +9,14 @@
       }
     </th>
 
-    <th (click)="sortBy('gateway')">Шлюз
+    <th title="Сортировать по Шлюзу" (click)="sortBy('gateway')">Шлюз
       @switch(sortState.field === 'gateway' ? sortState.direction : null) {
 
       @case('asc') {<span>▲</span>}
       @case('desc') {<span>▼</span>}
       }
     </th>
-    <th (click)="sortBy('interface')">Интерфейс
+    <th title="Сортировать по Интерфейсу" (click)="sortBy('interface')">Интерфейс
       @switch(sortState.field === 'interface' ? sortState.direction : null) {
 
       @case('asc') {<span>▲</span>}
