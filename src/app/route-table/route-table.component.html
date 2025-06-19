@@ -1,0 +1,37 @@
+<table>
+  <thead>
+  <tr>
+    <th (click)="sortBy('address')">
+      Адрес
+      @switch(sortState.field === 'address' ? sortState.direction : null) {
+      @case('asc') {<span>▲</span>}
+      @case('desc') {<span>▼</span>}
+      }
+    </th>
+
+    <th (click)="sortBy('gateway')">Шлюз
+      @switch(sortState.field === 'gateway' ? sortState.direction : null) {
+
+      @case('asc') {<span>▲</span>}
+      @case('desc') {<span>▼</span>}
+      }
+    </th>
+    <th (click)="sortBy('interface')">Интерфейс
+      @switch(sortState.field === 'interface' ? sortState.direction : null) {
+
+      @case('asc') {<span>▲</span>}
+      @case('desc') {<span>▼</span>}
+      }
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  @for (route of routes; track route.uuid) {
+    <tr>
+      <td>{{ route.address }}</td>
+      <td>{{ route.gateway }}</td>
+      <td>{{ route.interface }}</td>
+    </tr>
+  }
+  </tbody>
+</table>
